@@ -6,7 +6,6 @@ import json
 import os
 import sys
 import subprocess
-from datetime import datetime
 
 # 1. Page Configuration
 st.set_page_config(
@@ -308,6 +307,7 @@ def run_agent_pipeline():
         subprocess.run([sys.executable, "reporting_agent.py"], check=True)
         st.cache_data.clear()
         st.success("Successfully executed reporting agent. Data refreshed!")
+        st.rerun()
     except Exception as e:
         st.error(f"Error running pipeline: {str(e)}")
 
@@ -316,8 +316,12 @@ def run_agent_pipeline():
 def load_report_data():
     if not os.path.exists('report_data.json'):
         return None
-    with open('report_data.json', 'r') as f:
-        return json.load(f)
+    try:
+        with open('report_data.json', 'r') as f:
+            data = json.load(f)
+            return data
+    except (json.JSONDecodeError, IOError):
+        return None
 
 # Build Header Layout
 head_left, head_right = st.columns([7, 2])
@@ -438,68 +442,93 @@ else:
         
         with c_left:
             # Chart 1: Stock Value vs Waste Risk Cost by Category
-            batches = pd.DataFrame(report_data["batches"])
-            cat_agg = batches.groupby("category").agg({"total_cost": "sum", "waste_cost": "sum"}).reset_index()
-            
-            fig_cat = go.Figure()
-            fig_cat.add_trace(go.Bar(
-                name="Total Stock Value",
-                x=cat_agg["category"],
-                y=cat_agg["total_cost"],
-                marker_color="#2563eb" if not IS_DARK else "#3b82f6"
-            ))
-            fig_cat.add_trace(go.Bar(
-                name="Projected Waste Cost",
-                x=cat_agg["category"],
-                y=cat_agg["waste_cost"],
-                marker_color="#dc2626" if not IS_DARK else "#ef4444"
-            ))
-            fig_cat.update_layout(
-                barmode='group',
-                height=300,
-                legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
-                **PLOT_LAYOUT
-            )
-            
-            st.markdown("""
-            <div class="chart-wrap">
-                <div class="chart-title">Stock Value vs. Expiry Waste Risk by Category</div>
-                <div class="chart-subtitle">Cost at risk represents stock projected to expire before sale based on daily order velocities.</div>
-            """, unsafe_allow_html=True)
-            st.plotly_chart(fig_cat, use_container_width=True, config={"displayModeBar": False})
-            st.markdown("</div>", unsafe_allow_html=True)
-            
-        with c_right:
-            # Chart 2: Cumulative Expiry Schedule
-            # Sort batches by expiry date
-            batches_sorted = batches.sort_values("remaining_days")
-            # Filter remaining days > 0
-            batches_future = batches_sorted[batches_sorted["remaining_days"] > 0].copy()
-            if not batches_future.empty:
-                batches_future["cum_cost"] = batches_future["total_cost"].cumsum()
+            batches_list = report_data.get("batches", [])
+            if batches_list:
+                batches = pd.DataFrame(batches_list)
+                cat_agg = batches.groupby("category").agg({"total_cost": "sum", "waste_cost": "sum"}).reset_index()
                 
-                fig_timeline = px.line(
-                    batches_future, 
-                    x="remaining_days", 
-                    y="cum_cost",
-                    labels={"remaining_days": "Days until Expiry", "cum_cost": "Cumulative Inventory Cost ($)"}
-                )
-                fig_timeline.update_traces(
-                    line_color="#2563eb" if not IS_DARK else "#3b82f6",
-                    line_width=3
-                )
-                fig_timeline.update_layout(
+                fig_cat = go.Figure()
+                fig_cat.add_trace(go.Bar(
+                    name="Total Stock Value",
+                    x=cat_agg["category"],
+                    y=cat_agg["total_cost"],
+                    marker_color="#2563eb" if not IS_DARK else "#3b82f6"
+                ))
+                fig_cat.add_trace(go.Bar(
+                    name="Projected Waste Cost",
+                    x=cat_agg["category"],
+                    y=cat_agg["waste_cost"],
+                    marker_color="#dc2626" if not IS_DARK else "#ef4444"
+                ))
+                fig_cat.update_layout(
+                    barmode='group',
                     height=300,
+                    legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
                     **PLOT_LAYOUT
                 )
                 
                 st.markdown("""
                 <div class="chart-wrap">
-                    <div class="chart-title">Cumulative Expiry Schedule Timeline</div>
-                    <div class="chart-subtitle">Shows cumulative inventory cost ($) expiring over the next 90 days.</div>
+                    <div class="chart-title">Stock Value vs. Expiry Waste Risk by Category</div>
+                    <div class="chart-subtitle">Cost at risk represents stock projected to expire before sale based on daily order velocities.</div>
                 """, unsafe_allow_html=True)
-                st.plotly_chart(fig_timeline, use_container_width=True, config={"displayModeBar": False})
+                st.plotly_chart(fig_cat, use_container_width=True, config={"displayModeBar": False})
                 st.markdown("</div>", unsafe_allow_html=True)
+            else:
+                st.markdown("""
+                <div class="chart-wrap">
+                    <div class="chart-title">Stock Value vs. Expiry Waste Risk by Category</div>
+                    <div class="chart-subtitle">No inventory data available for category breakdown.</div>
+                    <div style="height: 300px; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
+                        No category data.
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
+            
+        with c_right:
+            # Chart 2: Cumulative Expiry Schedule
+            if batches_list:
+                batches = pd.DataFrame(batches_list)
+                # Filter remaining days > 0
+                batches_future = batches[batches["remaining_days"] > 0].copy()
+                
+                if not batches_future.empty:
+                    # Aggregate by day first to avoid multiple points per day in line chart
+                    day_agg = batches_future.groupby("remaining_days")["total_cost"].sum().reset_index().sort_values("remaining_days")
+                    day_agg["cum_cost"] = day_agg["total_cost"].cumsum()
+                    
+                    fig_timeline = px.line(
+                        day_agg, 
+                        x="remaining_days", 
+                        y="cum_cost",
+                        labels={"remaining_days": "Days until Expiry", "cum_cost": "Cumulative Inventory Cost ($)"}
+                    )
+                    fig_timeline.update_traces(
+                        line_color="#2563eb" if not IS_DARK else "#3b82f6",
+                        line_width=3
+                    )
+                    fig_timeline.update_layout(
+                        height=300,
+                        **PLOT_LAYOUT
+                    )
+                    
+                    st.markdown("""
+                    <div class="chart-wrap">
+                        <div class="chart-title">Cumulative Expiry Schedule Timeline</div>
+                        <div class="chart-subtitle">Shows cumulative inventory cost ($) expiring over the next 90 days.</div>
+                    """, unsafe_allow_html=True)
+                    st.plotly_chart(fig_timeline, use_container_width=True, config={"displayModeBar": False})
+                    st.markdown("</div>", unsafe_allow_html=True)
+                else:
+                    st.markdown("""
+                    <div class="chart-wrap">
+                        <div class="chart-title">Cumulative Expiry Schedule Timeline</div>
+                        <div class="chart-subtitle">No upcoming expirations detected.</div>
+                        <div style="height: 300px; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
+                            No future stock expirations.
+                        </div>
+                    </div>
+                    """, unsafe_allow_html=True)
             else:
                 st.markdown("""
                 <div class="chart-wrap">
@@ -790,9 +819,9 @@ else:
                     
                 # Coverage vs Expiry Alert badge
                 if doc > r_days:
-                    coverage_badge = f"<span class='badge badge-red' title='Stock will expire before sales clear it'>Overstock Waste</span>"
+                    coverage_badge = "<span class='badge badge-red' title='Stock will expire before sales clear it'>Overstock Waste</span>"
                 else:
-                    coverage_badge = f"<span class='badge badge-green' title='Sales velocity will clear stock'>Safe Turnover</span>"
+                    coverage_badge = "<span class='badge badge-green' title='Sales velocity will clear stock'>Safe Turnover</span>"
                     
                 rows_html += f"""
                 <tr>
