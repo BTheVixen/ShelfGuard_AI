@@ -1,0 +1,342 @@
+[
+    {
+        "sku": "DAI-001",
+        "product_name": "Organic Whole Milk 1L",
+        "category": "Dairy",
+        "stock_quantity": 120,
+        "unit_cost": 2.5,
+        "batch_number": "B-DAI01-A",
+        "production_date": "2026-06-16",
+        "expiry_date": "2026-06-30"
+    },
+    {
+        "sku": "DAI-001",
+        "product_name": "Organic Whole Milk 1L",
+        "category": "Dairy",
+        "stock_quantity": 350,
+        "unit_cost": 2.5,
+        "batch_number": "B-DAI01-B",
+        "production_date": "2026-06-21",
+        "expiry_date": "2026-07-05"
+    },
+    {
+        "sku": "DAI-001",
+        "product_name": "Organic Whole Milk 1L",
+        "category": "Dairy",
+        "stock_quantity": 600,
+        "unit_cost": 2.5,
+        "batch_number": "B-DAI01-C",
+        "production_date": "2026-06-29",
+        "expiry_date": "2026-07-13"
+    },
+    {
+        "sku": "DAI-002",
+        "product_name": "Greek Yogurt Plain 500g",
+        "category": "Dairy",
+        "stock_quantity": 90,
+        "unit_cost": 3.8,
+        "batch_number": "B-DAI02-A",
+        "production_date": "2026-06-12",
+        "expiry_date": "2026-07-03"
+    },
+    {
+        "sku": "DAI-002",
+        "product_name": "Greek Yogurt Plain 500g",
+        "category": "Dairy",
+        "stock_quantity": 240,
+        "unit_cost": 3.8,
+        "batch_number": "B-DAI02-B",
+        "production_date": "2026-06-25",
+        "expiry_date": "2026-07-16"
+    },
+    {
+        "sku": "DAI-003",
+        "product_name": "Cheddar Cheese Block 250g",
+        "category": "Dairy",
+        "stock_quantity": 50,
+        "unit_cost": 4.2,
+        "batch_number": "B-DAI03-A",
+        "production_date": "2026-05-08",
+        "expiry_date": "2026-07-07"
+    },
+    {
+        "sku": "DAI-003",
+        "product_name": "Cheddar Cheese Block 250g",
+        "category": "Dairy",
+        "stock_quantity": 300,
+        "unit_cost": 4.2,
+        "batch_number": "B-DAI03-B",
+        "production_date": "2026-06-17",
+        "expiry_date": "2026-08-16"
+    },
+    {
+        "sku": "DAI-004",
+        "product_name": "Salted Butter 250g",
+        "category": "Dairy",
+        "stock_quantity": 400,
+        "unit_cost": 3.0,
+        "batch_number": "B-DAI04-A",
+        "production_date": "2026-06-07",
+        "expiry_date": "2026-09-05"
+    },
+    {
+        "sku": "PRD-001",
+        "product_name": "Baby Spinach Salad Bag 200g",
+        "category": "Produce",
+        "stock_quantity": 80,
+        "unit_cost": 1.9,
+        "batch_number": "B-PRD01-A",
+        "production_date": "2026-06-24",
+        "expiry_date": "2026-07-01"
+    },
+    {
+        "sku": "PRD-001",
+        "product_name": "Baby Spinach Salad Bag 200g",
+        "category": "Produce",
+        "stock_quantity": 150,
+        "unit_cost": 1.9,
+        "batch_number": "B-PRD01-B",
+        "production_date": "2026-06-27",
+        "expiry_date": "2026-07-04"
+    },
+    {
+        "sku": "PRD-001",
+        "product_name": "Baby Spinach Salad Bag 200g",
+        "category": "Produce",
+        "stock_quantity": 300,
+        "unit_cost": 1.9,
+        "batch_number": "B-PRD01-C",
+        "production_date": "2026-06-30",
+        "expiry_date": "2026-07-07"
+    },
+    {
+        "sku": "PRD-002",
+        "product_name": "Organic Strawberries 400g",
+        "category": "Produce",
+        "stock_quantity": 200,
+        "unit_cost": 4.5,
+        "batch_number": "B-PRD02-A",
+        "production_date": "2026-06-27",
+        "expiry_date": "2026-07-03"
+    },
+    {
+        "sku": "PRD-002",
+        "product_name": "Organic Strawberries 400g",
+        "category": "Produce",
+        "stock_quantity": 150,
+        "unit_cost": 4.5,
+        "batch_number": "B-PRD02-B",
+        "production_date": "2026-06-30",
+        "expiry_date": "2026-07-06"
+    },
+    {
+        "sku": "PRD-003",
+        "product_name": "Yellow Bananas 1kg",
+        "category": "Produce",
+        "stock_quantity": 500,
+        "unit_cost": 1.8,
+        "batch_number": "B-PRD03-A",
+        "production_date": "2026-06-26",
+        "expiry_date": "2026-07-04"
+    },
+    {
+        "sku": "PRD-003",
+        "product_name": "Yellow Bananas 1kg",
+        "category": "Produce",
+        "stock_quantity": 800,
+        "unit_cost": 1.8,
+        "batch_number": "B-PRD03-B",
+        "production_date": "2026-07-01",
+        "expiry_date": "2026-07-09"
+    },
+    {
+        "sku": "BAK-001",
+        "product_name": "Sourdough Bread Loaf 500g",
+        "category": "Bakery",
+        "stock_quantity": 45,
+        "unit_cost": 3.2,
+        "batch_number": "B-BAK01-A",
+        "production_date": "2026-06-27",
+        "expiry_date": "2026-07-01"
+    },
+    {
+        "sku": "BAK-001",
+        "product_name": "Sourdough Bread Loaf 500g",
+        "category": "Bakery",
+        "stock_quantity": 120,
+        "unit_cost": 3.2,
+        "batch_number": "B-BAK01-B",
+        "production_date": "2026-06-29",
+        "expiry_date": "2026-07-03"
+    },
+    {
+        "sku": "BAK-001",
+        "product_name": "Sourdough Bread Loaf 500g",
+        "category": "Bakery",
+        "stock_quantity": 200,
+        "unit_cost": 3.2,
+        "batch_number": "B-BAK01-C",
+        "production_date": "2026-07-01",
+        "expiry_date": "2026-07-05"
+    },
+    {
+        "sku": "BAK-002",
+        "product_name": "Butter Croissants (4 Pack)",
+        "category": "Bakery",
+        "stock_quantity": 110,
+        "unit_cost": 3.5,
+        "batch_number": "B-BAK02-A",
+        "production_date": "2026-06-30",
+        "expiry_date": "2026-07-03"
+    },
+    {
+        "sku": "BAK-003",
+        "product_name": "Chocolate Chip Muffins",
+        "category": "Bakery",
+        "stock_quantity": 90,
+        "unit_cost": 2.8,
+        "batch_number": "B-BAK03-A",
+        "production_date": "2026-06-29",
+        "expiry_date": "2026-07-04"
+    },
+    {
+        "sku": "BAK-003",
+        "product_name": "Chocolate Chip Muffins",
+        "category": "Bakery",
+        "stock_quantity": 180,
+        "unit_cost": 2.8,
+        "batch_number": "B-BAK03-B",
+        "production_date": "2026-07-01",
+        "expiry_date": "2026-07-06"
+    },
+    {
+        "sku": "PHA-001",
+        "product_name": "Daily Multivitamin Tabs 90s",
+        "category": "Pharmacy",
+        "stock_quantity": 60,
+        "unit_cost": 12.5,
+        "batch_number": "B-PHA01-A",
+        "production_date": "2025-06-17",
+        "expiry_date": "2026-06-17"
+    },
+    {
+        "sku": "PHA-001",
+        "product_name": "Daily Multivitamin Tabs 90s",
+        "category": "Pharmacy",
+        "stock_quantity": 120,
+        "unit_cost": 12.5,
+        "batch_number": "B-PHA01-B",
+        "production_date": "2025-07-22",
+        "expiry_date": "2026-07-22"
+    },
+    {
+        "sku": "PHA-001",
+        "product_name": "Daily Multivitamin Tabs 90s",
+        "category": "Pharmacy",
+        "stock_quantity": 450,
+        "unit_cost": 12.5,
+        "batch_number": "B-PHA01-C",
+        "production_date": "2025-12-29",
+        "expiry_date": "2026-12-29"
+    },
+    {
+        "sku": "PHA-002",
+        "product_name": "Allergy Relief Tablets 30s",
+        "category": "Pharmacy",
+        "stock_quantity": 300,
+        "unit_cost": 8.9,
+        "batch_number": "B-PHA02-A",
+        "production_date": "2025-03-09",
+        "expiry_date": "2027-03-09"
+    },
+    {
+        "sku": "PHA-003",
+        "product_name": "Children's Cough Syrup 150ml",
+        "category": "Pharmacy",
+        "stock_quantity": 80,
+        "unit_cost": 6.5,
+        "batch_number": "B-PHA03-A",
+        "production_date": "2025-01-23",
+        "expiry_date": "2026-07-17"
+    },
+    {
+        "sku": "PHA-003",
+        "product_name": "Children's Cough Syrup 150ml",
+        "category": "Pharmacy",
+        "stock_quantity": 200,
+        "unit_cost": 6.5,
+        "batch_number": "B-PHA03-B",
+        "production_date": "2025-09-05",
+        "expiry_date": "2027-02-27"
+    },
+    {
+        "sku": "MET-001",
+        "product_name": "Premium Beef Minced 500g",
+        "category": "Meat",
+        "stock_quantity": 30,
+        "unit_cost": 6.9,
+        "batch_number": "B-MET01-A",
+        "production_date": "2026-06-25",
+        "expiry_date": "2026-06-30"
+    },
+    {
+        "sku": "MET-001",
+        "product_name": "Premium Beef Minced 500g",
+        "category": "Meat",
+        "stock_quantity": 140,
+        "unit_cost": 6.9,
+        "batch_number": "B-MET01-B",
+        "production_date": "2026-06-29",
+        "expiry_date": "2026-07-04"
+    },
+    {
+        "sku": "MET-001",
+        "product_name": "Premium Beef Minced 500g",
+        "category": "Meat",
+        "stock_quantity": 220,
+        "unit_cost": 6.9,
+        "batch_number": "B-MET01-C",
+        "production_date": "2026-07-01",
+        "expiry_date": "2026-07-06"
+    },
+    {
+        "sku": "MET-002",
+        "product_name": "Free Range Chicken Breast 600g",
+        "category": "Meat",
+        "stock_quantity": 95,
+        "unit_cost": 8.5,
+        "batch_number": "B-MET02-A",
+        "production_date": "2026-06-27",
+        "expiry_date": "2026-07-03"
+    },
+    {
+        "sku": "MET-002",
+        "product_name": "Free Range Chicken Breast 600g",
+        "category": "Meat",
+        "stock_quantity": 210,
+        "unit_cost": 8.5,
+        "batch_number": "B-MET02-B",
+        "production_date": "2026-07-01",
+        "expiry_date": "2026-07-07"
+    },
+    {
+        "sku": "MET-003",
+        "product_name": "Pork Chops 400g",
+        "category": "Meat",
+        "stock_quantity": 160,
+        "unit_cost": 5.8,
+        "batch_number": "B-MET03-A",
+        "production_date": "2026-06-28",
+        "expiry_date": "2026-07-05"
+    },
+    {
+        "sku": "MET-003",
+        "product_name": "Pork Chops 400g",
+        "category": "Meat",
+        "stock_quantity": 240,
+        "unit_cost": 5.8,
+        "batch_number": "B-MET03-B",
+        "production_date": "2026-07-01",
+        "expiry_date": "2026-07-08"
+    }
+]

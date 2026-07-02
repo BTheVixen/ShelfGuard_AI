@@ -1,0 +1,114 @@
+[
+    {
+        "sku": "DAI-001",
+        "product_name": "Organic Whole Milk 1L",
+        "avg_daily_sales": 120.0,
+        "growth_rate": 0.05,
+        "last_7_days_sales_volume": 863
+    },
+    {
+        "sku": "DAI-002",
+        "product_name": "Greek Yogurt Plain 500g",
+        "avg_daily_sales": 25.0,
+        "growth_rate": 0.02,
+        "last_7_days_sales_volume": 158
+    },
+    {
+        "sku": "DAI-003",
+        "product_name": "Cheddar Cheese Block 250g",
+        "avg_daily_sales": 5.0,
+        "growth_rate": -0.01,
+        "last_7_days_sales_volume": 33
+    },
+    {
+        "sku": "DAI-004",
+        "product_name": "Salted Butter 250g",
+        "avg_daily_sales": 15.0,
+        "growth_rate": 0.01,
+        "last_7_days_sales_volume": 99
+    },
+    {
+        "sku": "PRD-001",
+        "product_name": "Baby Spinach Salad Bag 200g",
+        "avg_daily_sales": 85.0,
+        "growth_rate": 0.08,
+        "last_7_days_sales_volume": 623
+    },
+    {
+        "sku": "PRD-002",
+        "product_name": "Organic Strawberries 400g",
+        "avg_daily_sales": 120.0,
+        "growth_rate": 0.04,
+        "last_7_days_sales_volume": 870
+    },
+    {
+        "sku": "PRD-003",
+        "product_name": "Yellow Bananas 1kg",
+        "avg_daily_sales": 150.0,
+        "growth_rate": 0.02,
+        "last_7_days_sales_volume": 1132
+    },
+    {
+        "sku": "BAK-001",
+        "product_name": "Sourdough Bread Loaf 500g",
+        "avg_daily_sales": 65.0,
+        "growth_rate": 0.03,
+        "last_7_days_sales_volume": 417
+    },
+    {
+        "sku": "BAK-002",
+        "product_name": "Butter Croissants (4 Pack)",
+        "avg_daily_sales": 80.0,
+        "growth_rate": 0.02,
+        "last_7_days_sales_volume": 551
+    },
+    {
+        "sku": "BAK-003",
+        "product_name": "Chocolate Chip Muffins",
+        "avg_daily_sales": 40.0,
+        "growth_rate": 0.01,
+        "last_7_days_sales_volume": 254
+    },
+    {
+        "sku": "PHA-001",
+        "product_name": "Daily Multivitamin Tabs 90s",
+        "avg_daily_sales": 2.5,
+        "growth_rate": 0.0,
+        "last_7_days_sales_volume": 17
+    },
+    {
+        "sku": "PHA-002",
+        "product_name": "Allergy Relief Tablets 30s",
+        "avg_daily_sales": 1.8,
+        "growth_rate": 0.01,
+        "last_7_days_sales_volume": 13
+    },
+    {
+        "sku": "PHA-003",
+        "product_name": "Children's Cough Syrup 150ml",
+        "avg_daily_sales": 3.0,
+        "growth_rate": -0.02,
+        "last_7_days_sales_volume": 19
+    },
+    {
+        "sku": "MET-001",
+        "product_name": "Premium Beef Minced 500g",
+        "avg_daily_sales": 85.0,
+        "growth_rate": 0.05,
+        "last_7_days_sales_volume": 559
+    },
+    {
+        "sku": "MET-002",
+        "product_name": "Free Range Chicken Breast 600g",
+        "avg_daily_sales": 60.0,
+        "growth_rate": 0.02,
+        "last_7_days_sales_volume": 433
+    },
+    {
+        "sku": "MET-003",
+        "product_name": "Pork Chops 400g",
+        "avg_daily_sales": 45.0,
+        "growth_rate": 0.01,
+        "last_7_days_sales_volume": 318
+    }
+]
